@@ -1,5 +1,7 @@
 package com.nurbol.car_marketplace.BeysenbayNurbolEntity;
 
+
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,4 +25,10 @@ public class Car{
     private Integer year;
 
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User owner;
+
+    private String imageUrl;
 }

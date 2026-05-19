@@ -5,6 +5,7 @@ import com.nurbol.car_marketplace.BeysenbayNurbolDTO.User.UserCreateDTO;
 import com.nurbol.car_marketplace.BeysenbayNurbolDTO.User.UserResponseDTO;
 import com.nurbol.car_marketplace.BeysenbayNurbolMapper.UserMapper;
 import com.nurbol.car_marketplace.BeysenbayNurbolService.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UserResponseDTO createUser(@RequestBody UserCreateDTO dto) {
+    public UserResponseDTO createUser(@Valid @RequestBody UserCreateDTO dto) {
         var user = UserMapper.toEntity(dto);
         var saved = userService.createUser(user);
         return UserMapper.toDTO(saved);
