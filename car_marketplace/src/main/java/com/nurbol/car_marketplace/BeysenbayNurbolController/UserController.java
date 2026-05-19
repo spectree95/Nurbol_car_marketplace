@@ -1,7 +1,10 @@
 package com.nurbol.car_marketplace.BeysenbayNurbolController;
 
 
+import com.nurbol.car_marketplace.BeysenbayNurbolDTO.UserCreateDTO;
+import com.nurbol.car_marketplace.BeysenbayNurbolDTO.UserResponseDTO;
 import com.nurbol.car_marketplace.BeysenbayNurbolEntity.User;
+import com.nurbol.car_marketplace.BeysenbayNurbolMapper.UserMapper;
 import com.nurbol.car_marketplace.BeysenbayNurbolService.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +24,9 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public UserResponseDTO createUser(@RequestBody UserCreateDTO dto) {
+        var user = UserMapper.toEntity(dto);
+        var saved = userService.createUser(user);
+        return UserMapper.toDTO(saved);
     }
 }
