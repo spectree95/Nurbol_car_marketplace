@@ -19,8 +19,9 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public List<UserResponseDTO> getAllUsers() {
+        var users = userService.getAllUsers();
+        return UserMapper.toDTOList(users); // Передаем список сущностей, получаем список DTO
     }
 
     @PostMapping

@@ -4,6 +4,7 @@ package com.nurbol.car_marketplace.BeysenbayNurbolMapper;
 import com.nurbol.car_marketplace.BeysenbayNurbolDTO.UserCreateDTO;
 import com.nurbol.car_marketplace.BeysenbayNurbolDTO.UserResponseDTO;
 import com.nurbol.car_marketplace.BeysenbayNurbolEntity.User;
+import java.util.List;
 
 public class UserMapper {
 
@@ -21,5 +22,11 @@ public class UserMapper {
         dto.setUsername(user.getUsername());
         dto.setEmail(user.getEmail());
         return dto;
+    }
+
+    public static List<UserResponseDTO> toDTOList(List<User> users) {
+        return users.stream()
+                .map(UserMapper::toDTO)
+                .toList();
     }
 }
