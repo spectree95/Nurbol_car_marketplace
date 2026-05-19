@@ -1,4 +1,4 @@
-package com.nurbol.car_marketplace.BeysenbayNurbolDTO;
+package com.nurbol.car_marketplace.BeysenbayNurbolDTO.User;
 
 
 import lombok.Data;

@@ -1,9 +1,8 @@
 package com.nurbol.car_marketplace.BeysenbayNurbolController;
 
 
-import com.nurbol.car_marketplace.BeysenbayNurbolDTO.UserCreateDTO;
-import com.nurbol.car_marketplace.BeysenbayNurbolDTO.UserResponseDTO;
-import com.nurbol.car_marketplace.BeysenbayNurbolEntity.User;
+import com.nurbol.car_marketplace.BeysenbayNurbolDTO.User.UserCreateDTO;
+import com.nurbol.car_marketplace.BeysenbayNurbolDTO.User.UserResponseDTO;
 import com.nurbol.car_marketplace.BeysenbayNurbolMapper.UserMapper;
 import com.nurbol.car_marketplace.BeysenbayNurbolService.UserService;
 import lombok.RequiredArgsConstructor;
